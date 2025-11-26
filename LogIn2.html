@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title> LOGIN Validationm </title> <!-- tajuk tab browser -->
+
+	<!-- pautkan fail CSS luaran -->
+	<link rel="stylesheet" href="logStyle.css"/>
+
+	<!-- pautkan fail JavaScript luaran -->
+	<script src="login2.js"></script>
+	</head>
+
+<body>
+<body style="background-color:powderblue;"> <!-- warna latar belakang keseluruhan -->
+
+	<div style="background-color:#0F0F8C; height:55px"> <!-- header biru -->
+        <CENTER><H4 style="color:#E9F7EF">SISTEM PENGURUSAN 
+		PUSAT GYM</h4 </CENTER> <!-- tajuk sistem -->
+    </div>
+	
+	<div class="container"> <!-- container utama -->
+	<div class="main"> <!-- kotak login -->
+	<h2>Javascript Login Form Validation</h2> <!-- tajuk form login -->
+
+<form id="form_id" method="post" name="myform"> <br> <!-- mula form -->
+	<label>User Name :</label> <!-- label username -->
+	<input type="text" name="username" id="username"/> <!-- input username -->
+
+	<label>Password :</label> <!-- label password -->
+	<input type="password" name="password" id="password"> <!-- input password -->
+	
+	<input type="button" value="LOGIN" id="submit" onclick="validate()"/> <!-- butang login -->
+	
+	<BR> 
+	<p> Not a member? Please Sign Up to join. <!-- mesej untuk daftar -->
+
+	<input type="button" value="SIGN UP" id="submit" onclick="window.location.href='FORM2_print.html'"/> <!-- butang pergi ke page signup -->
+</form>
+
+	<span>
+	<b class="note">Note : </b> <I> For this demo use following username and password. </I> <!-- nota demo -->
+	<br/>
+	<b class="valid"> ( User Name : Formget <br/> Password : formget#123 )</b> <!-- username & password demo -->
+	</span>
+
+	</div> <!-- tamat div.main -->
+	</div> <!-- tamat div.container -->
+		
+</body>
+</html>

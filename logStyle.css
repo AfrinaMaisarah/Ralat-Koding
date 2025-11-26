@@ -1,0 +1,92 @@
+/* Below line is used for online Google font */
+@import url(http://fonts.googleapis.com/css?family=Raleway); /* import font Raleway dari Google */
+
+h2{
+background-color: #FEFFED; /* warna latar belakang tajuk */
+padding: 30px 35px; /* ruang dalam (atas/bawah 30px, kiri/kanan 35px) */
+margin: -10px -50px; /* jarak luar negatif untuk rapatkan ke tepi */
+text-align:center; /* teks berada di tengah */
+border-radius: 10px 10px 0 0; /* bucu atas dibulatkan */
+}
+
+hr{
+margin: 10px -50px; /* jarak luar atas/bawah 10px, kiri/kanan -50px */
+border: 0; /* buang border default */
+border-top: 1px solid #ccc; /* garis atas sahaja */
+margin-bottom: 40px; /* jarak bawah */
+}
+
+div.container{
+width: 900px; /* lebar container */
+height: 610px; /* tinggi container */
+margin:35px auto; /* center kiri/kanan & jarak atas 35px */
+font-family: 'Raleway', sans-serif; /* guna font Raleway */
+}
+
+div.main{
+background-color: #EBF5FB ;	/* warna latar belakang form */
+width: 300px; /* lebar form */
+padding: 10px 50px 25px; /* ruang dalam (atas 10px, kiri/kanan 50px, bawah 25px) */
+border: 2px solid gray; /* border keliling */
+border-radius: 10px; /* bucu dibulatkan */
+font-family: raleway; /* jenis font */
+float:left; /* letak form ke kiri */
+margin-top:50px; /* jarak atas */
+}
+
+input[type=text],input[type=password]{
+width: 100%; /* input penuh ruang container */
+height: 40px; /* tinggi input */
+padding: 5px; /* ruang dalam */
+margin-bottom: 25px; /* jarak bawah */
+margin-top: 5px; /* jarak atas */
+border: 2px solid #ccc; /* border kelabu */
+color: #4f4f4f; /* warna teks */
+font-size: 16px; /* saiz tulisan */
+border-radius: 5px; /* bucu dibulatkan */
+}
+
+label{
+color: #464646; /* warna tulisan label */
+text-shadow: 0 1px 0 #fff; /* efek bayang kecil */
+font-size: 14px; /* saiz teks */
+font-weight: bold; /* teks tebal */
+}
+
+center{
+font-size:32px; /* saiz teks untuk tag <center> */
+}
+
+.note{
+color:red; /* teks merah untuk nota penting */
+}
+
+.valid{
+color:green; /* teks hijau untuk mesej berjaya */
+}
+
+.back{
+text-decoration: none; /* buang underline */
+border: 1px solid rgb(0, 143, 255); /* border biru */
+background-color: rgb(0, 214, 255); /* latar biru cerah */
+padding: 3px 20px; /* ruang dalam */
+border-radius: 2px; /* sedikit bulat */
+color: black; /* warna teks */
+}
+
+input[type=button]{
+font-size: 16px; /* saiz tulisan */
+background: linear-gradient(#ffbc00 5%, #ffdd7f 100%); /* warna gradient butang */
+border: 1px solid #e5a900; /* border kuning */
+color: #4E4D4B; /* warna teks */
+font-weight: bold; /* teks tebal */
+cursor: pointer; /* tukar ikon cursor */
+width: 100%; /* butang penuh ruang */
+border-radius: 5px; /* bucu dibulatkan */
+padding: 10px 0; /* ruang atas & bawah */
+outline:none; /* buang outline bila klik */
+}
+
+input[type=button]:hover{
+background: linear-gradient(#ffdd7f 5%, #ffbc00 100%); /* warna gradient bila hover */
+}

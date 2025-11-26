@@ -1,0 +1,153 @@
+<!DOCTYPE html> <!-- dokumen HTML5 -->
+<html>
+<head>
+<title>     </title> <!-- tajuk kosong -->
+</head>
+
+<body>
+<body style="background-color:powderblue;"> <!-- warna latar belakang -->
+
+	<div style="background-color:#0F0F8C ;height:45px"> <!-- header biru -->
+        <CENTER><h1 style="color:white">PUSAT GYM</h1> </CENTER> <!-- tajuk utama -->
+    </div>
+
+<div header style="background-color:#EBDEF0;" ><center> <!-- bahagian ticker -->
+
+<marquee> <!-- teks bergerak -->
+<p id="demo"></p> <!-- paparkan tarikh & masa -->
+</marquee>
+
+</div>	
+
+	<CENTER><H3><U> COUNT YOUR BMI SCORE ! </U></H3></CENTER> <!-- tajuk BMI -->
+
+<center><br>
+	Enter your weight... <!-- penerangan -->
+
+<P>  <br>
+
+<!-- borang BMI -->
+<FORM NAME="BMI" method=POST>
+<TABLE border=1> <!-- jadual input -->
+<TR>
+	<TD><DIV ALIGN=CENTER> Your Weight (kg)</DIV></TD> <!-- label berat -->
+	<TD><DIV ALIGN=CENTER> Your Height (cm)</DIV></TD> <!-- label tinggi -->
+</TR>
+
+<TR>
+	<TD><INPUT TYPE=TEXT NAME=weight SIZE=15 onFocus="this.form.weight.value=''" maxlength=3></TD> <!-- input berat -->
+	<TD><INPUT TYPE=TEXT NAME=height SIZE=15 onFocus="this.form.height.value=''" maxlength=3></TD> <!-- input tinggi -->
+</TR>
+</TABLE>
+
+<P>
+ <!-- butang kira BMI -->
+ <INPUT TYPE="button" VALUE="See Result" onClick="computeform(this.form)" style="font-weight:bold; font-size:17px;  width:auto; background-color:salmon" >
+
+ <!-- butang reset -->
+ <INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)" style="font-weight:bold; font-size:17px; width:auto; background-color:salmon" >
+  
+<TABLE border=1> <!-- jadual keputusan -->
+<TR>
+	<TD><DIV ALIGN=CENTER> Your BMI </DIV></TD> <!-- tempat hasil BMI -->
+	<TD ><DIV ALIGN=CENTER> Comments </DIV></TD> <!-- komen BMI -->
+</TR>
+
+<TR>
+	<TD rowspan="2"><textarea rows="3" NAME=bmi  SIZE=8 readonly> </textarea></TD> <!-- paparan BMI -->
+	<TD rowspan="2" ><textarea rows="3" NAME=my_comment  size=55 readonly> </textarea></TD> <!-- paparan komen -->
+</TR>
+</TABLE>
+</FORM>
+
+<P><HR>
+
+<!-- Disclaimers -->
+<B>Disclaimer</B>: This form is based on BMI calculation... 
+<br>Information may not be accurate...
+
+<hr>
+
+<!-- JAVASCRIPT BMI SCRIPT -->
+<SCRIPT LANGUAGE="JAVASCRIPT">
+
+// papar tarikh semasa dalam marquee
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+
+// fungsi reset borang
+function ClearForm(form){
+    form.weight.value = "";
+    form.height.value = "";
+    form.bmi.value = "";
+    form.my_comment.value = "";
+}
+
+// formula BMI asas
+function bmi(weight, height) {
+          bmindx = weight / eval(height * height); // kira BMI
+          return bmindx;
+}
+
+// fungsi semak input
+function checkform(form) {
+
+       // semak kalau kosong
+       if (form.weight.value=="" || form.height.value==""){
+            alert("\nPlease complete the form first");
+            return false;
+       }
+
+       // semak nilai tak logik
+       else if (parseFloat(form.height.value) <= 0 ||
+                parseFloat(form.height.value) >=500 ||
+                parseFloat(form.weight.value) <= 0 ||
+                parseFloat(form.weight.value) >=500){
+                alert("Please enter valid values.");
+                ClearForm(form);
+                return false;
+       }
+       return true; // lulus semakan
+}
+
+// fungsi kira BMI & komen
+function computeform(form) {
+
+       if (checkform(form)) { // hanya kira kalau form valid
+
+       yourbmi = Math.round(bmi(form.weight.value, form.height.value/100)); // kira BMI
+       form.bmi.value = yourbmi; // paparkan BMI
+
+       // komen ikut kategori BMI
+       if (yourbmi >40) {
+          form.my_comment.value="You are grossly obese, consult your physician!";
+       }
+       else if (yourbmi >30 && yourbmi <=40) {
+          form.my_comment.value="You are obese, please take care.";
+       }
+       else if (yourbmi >27 && yourbmi <=30) {
+          form.my_comment.value="You are very fat, take action soon.";
+       }
+       else if (yourbmi >22 && yourbmi <=27) {
+          form.my_comment.value="You are fat, consider diet & exercise.";
+       }
+       else if (yourbmi >=21 && yourbmi <=22) {
+          form.my_comment.value="Perfect! Maintain it!";
+       }
+       else if (yourbmi >=18 && yourbmi <21) {
+          form.my_comment.value="You are thin, eat more!";
+       }
+       else if (yourbmi >=16 && yourbmi <18) {
+          form.my_comment.value="You are starving. Eat properly.";
+       }
+       else if (yourbmi <16) {
+          form.my_comment.value="You're undernourished, seek medical help.";
+       }
+
+       }
+       return; // hentikan fungsi
+}
+
+</SCRIPT>
+</body>
+</html>
